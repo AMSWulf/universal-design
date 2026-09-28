@@ -1,0 +1,240 @@
+:root {
+  --ink: #202122;
+  --ink-soft: #54595d;
+  --paper: #ffffff;
+  --panel: #f8f9fa;
+  --rule: #c8ccd1;
+  --accent: #8a4b0f;
+  --accent-light: #f6ecdf;
+  --link: #3366cc;
+  --link-visited: #6b4ba1;
+}
+
+/* Hide only visually, but have it available for screen readers: */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "header"
+    "nav"
+    "main";
+}
+
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  grid-area: header;
+  padding: 1.25rem 1rem 0;
+}
+
+.site-header h1 {
+  margin: 0;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid #a2a9b1;
+  font-family: "Linux Libertine", Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.375;
+}
+
+.toc {
+  grid-area: nav;
+  margin: 1.5rem 1rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.toc h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-family: inherit;
+  border: 0;
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.toc ol ol {
+  padding-left: 1rem;
+  list-style: lower-alpha;
+}
+
+.toc ol ol ol {
+  list-style: lower-roman;
+}
+
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+main {
+  grid-area: main;
+  padding: 1rem;
+  max-width: 72rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main h2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--rule);
+  display: flow-root;
+}
+
+main h3 {
+  font-size: 1.2rem;
+  margin: 1.75rem 0 0.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main h4 {
+  font-size: 1.05rem;
+  margin: 1.25rem 0 0.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+section {
+  scroll-margin-top: 1rem;
+}
+
+.infobox {
+  margin: 1.5rem 0;
+  padding: 0.75rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.infobox h2 {
+  margin: 0 0 0.75rem;
+  padding: 0.4rem;
+  background: var(--accent-light);
+  border: 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: inherit;
+}
+
+.infobox figure {
+  margin: 0 0 0.75rem;
+}
+
+.infobox figcaption {
+  text-align: center;
+}
+
+.infobox dl {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 0.4rem 0.75rem;
+  margin: 0;
+}
+
+.infobox dt { font-weight: bold; }
+.infobox dd { margin: 0; }
+
+figure {
+  margin: 1rem 0;
+}
+
+figure img {
+  border: 1px solid var(--rule);
+}
+
+figcaption {
+  margin-top: 0.35rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 48em) {
+  .infobox {
+    float: right;
+    width: 18rem;
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  .figure-right {
+    float: right;
+    clear: right;
+    width: 16rem;
+    margin: 0.25rem 0 1rem 1.5rem;
+  }
+
+}
+
+@media (min-width: 70em) {
+  body {
+    grid-template-columns: 17rem minmax(0, 1fr);
+    grid-template-areas:
+      "header header"
+      "nav    main";
+  }
+
+  .toc {
+    align-self: start;
+    position: sticky;
+    top: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    margin: 1.5rem 0 0 1rem;
+  }
+
+  main {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
