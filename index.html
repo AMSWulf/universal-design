@@ -1,48 +1,48 @@
-<!doctype html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: #1a1a1c;
-    color: #ffffff;
-    font: 16px/1.65, Roboto;
-  }
-  main {
-    max-width: 34rem;
-    margin: 0 auto;
-    padding-inline: 20px;
-    padding-block: clamp(56px, 12vw, 104px) 64px;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alexander Schwarz</title>
+  <meta name="description" content="Alexander Schwarz, senior computer science major. Lab projects for Universal Design.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-  h1 { font-size: 1.85rem; font-weight: 600; letter-spacing: -0.02em; margin: 0; }
-  .role { color: #9a9aa2; margin: 6px 0 0; }
+<body>
 
-  h2 {
-    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #9a9aa2;
-    margin: clamp(38px, 7vw, 52px) 0 14px;
-  }
-  p { margin: 0 0 1em; }
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  ul { list-style: none; margin: 0; padding: 0; }
-  li { border-top: 1px solid #2e2e34; }
-  li:last-child { border-bottom: 1px solid #2e2e34; }
-  li a { display: block; padding: 15px 0; color: inherit; text-decoration: none; }
-  li a:hover { color: #8fb0ff; }
-</style>
+  <header>
+    <h1>Alexander Schwarz</h1>
+    <p class="role">Universal Design</p>
 
-<main>
-  <h1>Alexander Schwarz</h1>
-  <p class="role">Universal Design</p>
+    <nav aria-labelledby="nav-heading">
+      <h2 id="nav-heading" class="visually-hidden">Lab projects</h2>
+      <ul>
+        <li><a href="https://amswulf.github.io/universal-design/bengal-cat-wikipedia/">Lab 2: Coding &amp; Posting a Web Page</a></li>
+        <li><a href="https://amswulf.github.io/universal-design/black-cat-wikipedia/">Black Cat Page</a></li>
+        <li><a href="https://amswulf.github.io/universal-design/Screen-Reader-Tables/">Lab 3: Tables, Forms &amp; Screen Reading</a></li>
+        <li><a href="#">Lab 4: Accessible CSS Layout</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h2>About</h2>
-  <p>I'm a Senior Computer Science Major with a focus in Machine Learning and AI. Love my cats, video games, and running.</p>
+  <main id="main">
+    <section aria-labelledby="about-heading">
+      <h2 id="about-heading">About me</h2>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://amswulf.github.io/universal-design/bengal-cat-wikipedia/">Project One</a></li>
-    <li><a href="https://amswulf.github.io/universal-design/black-cat-wikipedia/">Project Two</a></li>
-    <li><a href="https://amswulf.github.io/universal-design/Screen-Reader-Tables/">Project Three</a></li>
-  </ul>
-</main>
+      <div class="about">
+        <img class="portrait" src="portrait.png" width="320" height="320" alt="Alexander Schwarz">
+        <div class="bio">
+          <p>I'm a Senior Computer Science Major with a focus in Machine Learning and AI. Love my cats, video games, and running.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

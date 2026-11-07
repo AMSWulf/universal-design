@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #1a1a1c;
+  color: #ffffff;
+  font-family: Roboto, system-ui, Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+a { color: #8fb0ff; }
+
+:focus-visible {
+  outline: 3px solid #8fb0ff;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 1.5rem;
+  z-index: 1;
+  padding: 0.75rem 1.4rem;
+  background: #8fb0ff;
+  color: #11131a;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-110%);
+  transition: transform 0.18s ease-out;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link { transition: none; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+header, main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header { padding-top: 64px; }
+main { padding-bottom: 80px; }
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.role {
+  margin: 6px 0 0;
+  color: #9a9aa2;
+}
+
+h2 {
+  margin: 48px 0 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a9aa2;
+}
+
+nav {
+  margin-top: 32px;
+  border-top: 1px solid #35353c;
+  border-bottom: 1px solid #35353c;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 3px solid transparent;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+  border-bottom-color: #8fb0ff;
+  color: #8fb0ff;
+  text-decoration: underline;
+}
+
+.about {
+  display: grid;
+  gap: 28px;
+}
+
+.portrait {
+  width: 160px;
+  height: 160px;
+  border: 1px solid #35353c;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bio p { max-width: 62ch; margin: 0 0 1em; }
+.bio p:last-child { margin-bottom: 0; }
+
+@media (min-width: 42rem) {
+  .about {
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+  }
+}
