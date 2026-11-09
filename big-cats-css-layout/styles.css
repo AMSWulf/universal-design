@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "facts"
+    "species"
+    "footer";
+  gap: 1px;
+  margin: 0;
+  background: #dfd8d3;
+  color: #2a231d;
+  font-family: Karla, system-ui, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+header, main, aside, footer {
+  padding: 28px 24px;
+  background: #f9f7f6;
+}
+
+header  { grid-area: header; }
+nav     { grid-area: nav; }
+main    { grid-area: main; }
+footer  { grid-area: footer; }
+
+#facts {
+  grid-area: facts;
+  background: #f7ece3;
+}
+
+#species {
+  grid-area: species;
+  background: #e5eef5;
+}
+
+h1, h2 {
+  margin: 0 0 0.6em;
+  font-family: "Zilla Slab", Georgia, serif;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.1rem; color: #683a12; }
+h2 { font-size: 1.3rem; color: #683a12; }
+
+p { margin: 0 0 1em; max-width: 68ch; }
+p:last-child { margin-bottom: 0; }
+
+main section + section { margin-top: 1.8rem; }
+
+a { color: #113b5f; }
+
+a:hover { color: #185081; }
+
+:focus-visible {
+  outline: 3px solid #185081;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 1.5rem;
+  z-index: 1;
+  padding: 0.75rem 1.4rem;
+  background: #113b5f;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-110%);
+  transition: transform 0.18s ease-out;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link { transition: none; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.kicker {
+  margin: 0 0 0.3em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: #655b53;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: #655b53;
+}
+
+nav { background: #683a12; }
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  min-height: 48px;
+  padding: 14px 24px;
+  border-bottom: 1px solid #915018;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav li:last-child a { border-bottom: 0; }
+
+nav a:hover,
+nav a:focus {
+  background: #915018;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+aside dl { margin: 0; }
+
+aside dt {
+  margin-top: 0.9em;
+  font-weight: 700;
+}
+
+aside dt:first-of-type { margin-top: 0; }
+
+aside dd {
+  margin: 0;
+  color: #655b53;
+}
+
+@media (min-width: 48rem) {
+  body {
+    grid-template-areas:
+      "header  header"
+      "nav     nav"
+      "main    main"
+      "facts   species"
+      "footer  footer";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  nav ul { flex-direction: row; flex-wrap: wrap; }
+
+  nav a {
+    border-bottom: 0;
+    border-right: 1px solid #915018;
+  }
+
+  header, main, aside, footer { padding: 36px 32px; }
+}
+
+@media (min-width: 64rem) {
+  body {
+    grid-template-areas:
+      "header  header  header"
+      "nav     nav     nav"
+      "facts   main    species"
+      "footer  footer  footer";
+    grid-template-columns: 17rem 1fr 17rem;
+  }
+
+  h1 { font-size: 2.6rem; }
+}
